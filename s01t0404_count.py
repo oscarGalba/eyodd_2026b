@@ -1,5 +1,5 @@
 # Creamos una lista de estudiantes 
-student_list_01 = ['Jordan','Pipen','Curry','Shack'] # ? 
+student_list_01 = ['Jordan','Pipen','Curry','Shack'] # O(1)
 
 def random_function(students): 
  first = students[0] # O(1)? 
@@ -10,7 +10,7 @@ def random_function(students):
    total += 1 #O(n) ? 
  new_list.append(student) #O(n) ? 
 
- print(new_list) # O(n)
+ print(new_list) # O(1)
  return total # O(1) 
 
 print(random_function(student_list_01)) 
