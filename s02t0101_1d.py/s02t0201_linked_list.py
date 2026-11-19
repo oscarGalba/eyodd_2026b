@@ -1,32 +1,36 @@
-# Creando la clase nodo
+#Creando la clase Nodo
 class Node:
-    # Constructor 
+
+    #Constructor
     def __init__(self, data=None):
         self.data = data
-        self.next = None 
+        self.next = None
+    def iter(self):
+        current = self
+        while current:
+            value = current.data
+            current = current.next 
+            yield value     
+
 
 # Testear nuestra clase nodo
 node_01 = Node("eggs")
-node_02 = Node("hem")
+node_02 = Node("ham")
 node_03 = Node("bacon")
+#print("🔗 NODES 🔗")
+#print(f"Node 01: D:{node_01.data} - N:{node_01.next}")
+#print(f"Node 02: D:{node_02.data} - N:{node_02.next}")
+#print(f"Node 03: D:{node_03.data} - N:{node_03.next}")
 
-print("📎NODOS SIN ENLAZAR")
-print (f"node 01: D:{node_01.data }- N:{node_01.next}")
-print (f"node 02: D:{node_02.data }- N:{node_02.next}")
-print (f"node 03: D:{node_03.data }- N:{node_03.next}")
-
-# Enlazando los nodos 
+# Enlazando nodos
 node_01.next = node_02
 node_02.next = node_03
 
-#print("📎NODOS ENLAZADOS")
-#print (f"node 01: D:{node_01.data }- N:{node_01.next}")
-#print (f"node 02: D:{node_02.data }- N:{node_02.next}")
-#print (f"node 03: D:{node_03.data }- N:{node_03.next}")
+#print("🔗 NODES ENLAZADOS 🔗")
+#print(f"Node 01: D:{node_01.data} - N:{node_01.next}")
+#print(f"Node 02: D:{node_02.data} - N:{node_02.next}")
+#print(f"Node 03: D:{node_03.data} - N:{node_03.next}")
 
-# List traversal (recorrido de la lista)
-current = node_01
-while current:
-    print(current.data, end = "->")
-    current = current.next
-print("")
+#List Traversal (Recorrido de la lista)
+for node_value in node_01.iter():
+    print(node_value)
